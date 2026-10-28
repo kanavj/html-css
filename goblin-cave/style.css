@@ -1,0 +1,139 @@
+/* ===== Page ===== */
+body {
+  background: #1a1a1a;
+  color: #eeeeee;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  margin: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ===== Room backgrounds (put one on <body class="...">) ===== */
+.outside {
+  background: linear-gradient(#0b1d4a, #000000);
+}
+.tunnel {
+  background: linear-gradient(#4e3b2a, #1a1a1a);
+}
+.treasure {
+  background: radial-gradient(circle, #8a6d00, #1a1a1a);
+}
+.campfire {
+  background: radial-gradient(circle at bottom, #c4410f, #1a1a1a);
+}
+.throne {
+  background: linear-gradient(#4a148c, #1a1a1a);
+}
+.danger {
+  background: radial-gradient(circle, #5c0000, #000000);
+}
+.victory {
+  background: radial-gradient(circle, #ffd54f, #2e7d32);
+}
+
+/* ===== Room box ===== */
+.room {
+  max-width: 600px;
+  background: rgba(30, 30, 30, 0.85);
+  border: 4px solid #555555;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 40px black;
+}
+
+h1 {
+  color: orange;
+}
+
+.picture {
+  font-size: 80px;
+}
+
+/* ===== Choice buttons ===== */
+.choice {
+  display: block;
+  margin: 12px 0;
+  padding: 14px;
+  background: #2e7d32;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.choice:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #7cfc00;
+}
+
+/* ===== Secrets (click to reveal) ===== */
+details {
+  background: #222222;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 16px 0;
+}
+summary {
+  color: gold;
+  cursor: pointer;
+}
+
+/* ===== Inventory ===== */
+.inventory {
+  display: inline-block;
+  background: #222222;
+  border: 2px dashed gold;
+  border-radius: 10px;
+  padding: 6px 14px;
+}
+
+/* ===== Hidden passage (invisible until you hover) ===== */
+.secret {
+  display: block;
+  margin-top: 20px;
+  color: gold;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.secret:hover {
+  opacity: 1;
+}
+
+/* ===== Endings ===== */
+.game-over {
+  border-color: crimson;
+}
+.game-over h1 {
+  color: crimson;
+}
+.win {
+  border-color: gold;
+}
+.win h1 {
+  color: gold;
+}
+
+/* ===== Animations ===== */
+.flicker {
+  display: inline-block;
+  animation: flicker 0.3s infinite alternate;
+}
+@keyframes flicker {
+  from { transform: scale(1);   opacity: 1; }
+  to   { transform: scale(1.1); opacity: 0.7; }
+}
+
+.wobble {
+  display: inline-block;
+  animation: wobble 1s infinite alternate;
+}
+@keyframes wobble {
+  from { transform: rotate(-10deg); }
+  to   { transform: rotate(10deg); }
+}
